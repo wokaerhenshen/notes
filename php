@@ -22,3 +22,7 @@ php some useful functions and methods.
      
    6.If you have a onlick event output by using echo, you should pay attention that “YOU CAN'T USE TWO SINGLE QUATION MARKS” both for the variable in the onlick function and for the function. You need to transfer the page to html and using another <?php ?> to make it work.
 
+   7. ez way to create a form that submit to itself:
+   
+   echo "<form method='post' action='". $_SERVER['PHP_SELF'] ."'>";
+   echo "</form>";
