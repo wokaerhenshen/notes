@@ -21,3 +21,4 @@ php some useful functions and methods.
      // 2003-10-16
      
    6.If you have a onlick event output by using echo, you should pay attention that “YOU CAN'T USE TWO SINGLE QUATION MARKS” both for the variable in the onlick function and for the function. You need to transfer the page to html and using another <?php ?> to make it work.
+
