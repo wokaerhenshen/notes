@@ -31,3 +31,18 @@ php some useful functions and methods.
     The value it returns is the datatype in the table of database. For example, when the datatype in the databse is "date". The datatype what PHP get is also "date"
     But you can't just output a date to the page. You need to transfer it to a string. In this case '->format('Y-m-d')' is used to do the transform.
     Mention: The datatype thing!
+
+ 9. one form multiple submit buttons with different names, then 
+ <input type="submit" name="publish" value="Publish">
+<input type="submit" name="save" value="Save">
+PHP side:
+<?php
+    if (isset($_POST['publish'])) {
+        # Publish-button was clicked
+    }
+    elseif (isset($_POST['save'])) {
+        # Save-button was clicked
+    }
+?>
+
+This will work if you want different submit button get different actions.
