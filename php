@@ -26,3 +26,8 @@ php some useful functions and methods.
    
    echo "<form method='post' action='". $_SERVER['PHP_SELF'] ."'>";
    echo "</form>";
+
+  8. Microsoft db function sqlsrv_fetch_array()
+    The value it returns is the datatype in the table of database. For example, when the datatype in the databse is "date". The datatype what PHP get is also "date"
+    But you can't just output a date to the page. You need to transfer it to a string. In this case '->format('Y-m-d')' is used to do the transform.
+    Mention: The datatype thing!
