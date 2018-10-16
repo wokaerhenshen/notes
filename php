@@ -46,3 +46,6 @@ PHP side:
 ?>
 
 This will work if you want different submit button get different actions.
+
+10.If you want to execute one php code from another php file
+just use include/include_one/require/require_once these four commands.
