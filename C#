@@ -6,3 +6,7 @@
 int.ToString()
 
 3.if you want to initilize an array you need to defind the size of it, no matter one 1d or 2d, the same.
+
+4.C# foreach syntax:
+var fibNumbers = new List<int> { 0, 1, 1, 2, 3, 5, 8, 13 };
+foreach (int element in fibNumbers)
