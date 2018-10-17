@@ -10,3 +10,11 @@ int.ToString()
 4.C# foreach syntax:
 var fibNumbers = new List<int> { 0, 1, 1, 2, 3, 5, 8, 13 };
 foreach (int element in fibNumbers)
+
+5.C# stack
+init:var stack = new Stack<Node>();
+stack.Push --> push a new element to stack
+stack.Pop() --> pops up the top element and remove it from the stack
+stack.Peek() --> gives you the top element in the stack and do not remove it from the stack
+stack.Count --> stack's counting number
+stack.Clear() --> clean the whole stack.
