@@ -18,3 +18,18 @@ stack.Pop() --> pops up the top element and remove it from the stack
 stack.Peek() --> gives you the top element in the stack and do not remove it from the stack
 stack.Count --> stack's counting number
 stack.Clear() --> clean the whole stack.
+
+6.C# string split
+string s = "there is a cat";
+string[] words = s.Split(' ');
+        foreach (string word in words)
+        {
+            Console.WriteLine(word);
+        }
+        
+output result:
+
+there
+is
+a
+cat
