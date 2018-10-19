@@ -33,3 +33,7 @@ there
 is
 a
 cat
+
+7. string property:
+Property or indexer 'string.this[int]' cannot be assigned to -- it is read only
+You can't assign a string's val by its index.
