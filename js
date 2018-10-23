@@ -18,3 +18,21 @@ ajax的缺点
 AJAX是“Asynchronous JavaScript and XML”的缩写。他是指一种创建交互式网页应用的网页开发技术。、
 
 客户端与服务器，可以在【不必刷新整个浏览器】的情况下，与服务器进行异步通讯的技术
+
+3.
+
+原生js ajax请求有几个步骤？分别是什么
+//创建 XMLHttpRequest 对象
+var ajax = new XMLHttpRequest();
+//规定请求的类型、URL 以及是否异步处理请求。
+ajax.open('GET',url,true);
+//发送信息至服务器时内容编码类型
+ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); 
+//发送请求
+ajax.send(null);  
+//接受服务器响应数据
+ajax.onreadystatechange = function () {
+    if (obj.readyState == 4 && (obj.status == 200 || obj.status == 304)) { 
+    }
+};
+
