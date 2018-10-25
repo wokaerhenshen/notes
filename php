@@ -49,3 +49,19 @@ This will work if you want different submit button get different actions.
 
 10.If you want to execute one php code from another php file
 just use include/include_one/require/require_once these four commands.
+
+11.php 排序
+1) 冒泡排序
+循环一遍，最大的放在最右边。
+2）插入排序
+循环一遍，后面的一个一个往前面已经排序好的数字里面插。
+3)选择排序
+循环一遍，选出最小的放在最左边，然后从剩下的里面找最小的，依次差在之前找到的最小的后面即可。
+4）快速排序
+选一个基准元素，一般为第一个元素或者最后一个元素，在这边选取第一个元素为基准元素
+将剩余元素推进两个数组，左array and right array
+the elements in the left array is smaller than 基准元素
+the elements in the right array is bigger than 基准元素
+然后对两个array再进行快排，
+最后用array_merge 将快排后的左数组，基准元素 与 快排后的右数组，一并merge了
+最后的merge后的数组即为排序后的结果。
