@@ -65,3 +65,48 @@ the elements in the right array is bigger than 基准元素
 然后对两个array再进行快排，
 最后用array_merge 将快排后的左数组，基准元素 与 快排后的右数组，一并merge了
 最后的merge后的数组即为排序后的结果。
+
+12.使用strip_tags() 函数来让 原来的string 摆脱 HTML, XML, and PHP tags.
+Syntax：strip_tags(string,allow)
+
+
+Example 1
+Strip the string from HTML tags, but allow <b> tags to be used:
+
+<?php
+echo strip_tags("Hello <b><i>world!</i></b>","<b>");
+?>
+
+
+13. php  json转换
+
+PHP has some built-in functions to handle JSON.
+
+Objects in PHP can be converted into JSON by using the PHP function json_encode():
+
+ex1:
+
+<?php
+$myObj->name = "John";
+$myObj->age = 30;
+$myObj->city = "New York";
+
+$myJSON = json_encode($myObj);
+
+echo $myJSON;
+?>
+
+ex2:
+
+<?php
+$myArr = array("John", "Mary", "Peter", "Sally");
+
+$myJSON = json_encode($myArr);
+
+echo $myJSON;
+?>
+
+
+
+
+
