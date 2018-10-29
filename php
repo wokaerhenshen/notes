@@ -106,7 +106,9 @@ $myJSON = json_encode($myArr);
 echo $myJSON;
 ?>
 
-
+14 . How to input current date in php input  text box:
+<input type='text' name='RecvDate' value='<?php echo date("Y-m-d");?>' size='13' />
+直接value  date()函数即可。
 
 
 
