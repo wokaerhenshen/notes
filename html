@@ -2,3 +2,14 @@
   <a href="xx" target="_blank" ></a>
 
 2.<header>-tags mark the header of arbitrary sections on your site. Don't confuse them with the website's <head> section that contains scripts, meta-tags, etc. <header>-tags belong into the <body>-tag. The basic structure of a <head> followed by a <body> has not changed in HTML5
+
+3.css background color with floating elements
+When the children elements are floated, they are taken out of the flow of the document. In doing so, the parent no longer has defined dimensions, as the children aren't technically occupying space. Thus, the parent element collapses upon itself. The same thing occurs when absolutely positioning the children elements too.
+
+In this instance, we can fix it by adding overflow:hidden to the parent element, thus forcing it to contain the children elements. Alternatively overflow:auto works just as well. Some may suggest it is even better than overflow:hidden as you will be able to tell if any calculations are off.
+.content {
+    overflow:hidden;
+}
+Now the parent element is no longer collapsed and the red background is visible.
+
+You could alternatively use a clearfix if you are looking for support in older browsers, but I don't recommend doing so.
