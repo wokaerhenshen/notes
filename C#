@@ -65,6 +65,14 @@ Since a HashSet<T> is simply a collection of unique objects, you might wonder wh
 
 The short answer is speed. Searching through a normal List<T> gets very slow very fast as more elements are added. A HashSet<T> requires a structure design that will allow for fast searching and insertion speeds.
 
+10. get the sum of all elements in List<int>
+double total = myList.Sum();
+
+
+11. remove the last element in a list 
+
+rows.RemoveAt(rows.Count - 1);
+
 
 
 
