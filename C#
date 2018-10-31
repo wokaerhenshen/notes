@@ -48,8 +48,22 @@ The Bitwise operators supported by C# are listed in the following table. Assume 
 <<	Binary Left Shift Operator. The left operands value is moved left by the number of bits specified by the right operand.	A << 2 = 240, which is 1111 0000
 >>	Binary Right Shift Operator. The left operands value is moved right by the number of bits specified by the right operand.	A >> 2 = 15, which is 0000 1111
 
+9. The HashSet<T> data structure:
+
+HashSet<T> is more or less modeled after a mathematical set, which means that:
+
+It may contain no duplicate values.
+
+Its elements are in no particular order; therefore the type does not implement the IList<T> interface, but the more basic ICollection<T>. As a consequence, elements inside a hash set cannot be randomly accessed through indices; they can only be iterated over through an enumerator.
+
+Certain set functions such as Union, Intersection, IsSubsetOf, IsSupersetOf are available. These can come in handy when working with multiple sets.
 
 
+Why not List<T>?
+
+Since a HashSet<T> is simply a collection of unique objects, you might wonder why it has to be a data structure. A normal List<T> could have the same behavior by checking if an object is found in the list before adding it.
+
+The short answer is speed. Searching through a normal List<T> gets very slow very fast as more elements are added. A HashSet<T> requires a structure design that will allow for fast searching and insertion speeds.
 
 
 
