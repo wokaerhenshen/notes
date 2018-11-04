@@ -36,3 +36,16 @@ ajax.onreadystatechange = function () {
     }
 };
 
+4.
+
+JS note:
+if you want to define the value of one item in the form , you can just have the “value” tag, and this will be what the server receive, I mean the thing that is in the “value” tag.
+
+padding is tianchong , if i say that padding:20px;
+
+it means that all the four parts of the div will appear a 20px tian chong,
+
+if i say padding-left:20pxl
+
+it means that on the left part it will be a 20 px tianchong.
+
