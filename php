@@ -110,5 +110,18 @@ echo $myJSON;
 <input type='text' name='RecvDate' value='<?php echo date("Y-m-d");?>' size='13' />
 直接value  date()函数即可。
 
+15. We can use php code to generate pdf file, in here I will share two methods:
+
+MultiCell
+MultiCell(float w, float h, string txt [, mixed border [, string align [, boolean fill]]])
+Description
+This method allows printing text with line breaks. They can be automatic (as soon as the text reaches the right border of the cell) or explicit (via the \n character). As many cells as necessary are output, one below the other. 
+Text can be aligned, centered or justified. The cell block can be framed and the background painted.
+
+Cell
+Cell(float w [, float h [, string txt [, mixed border [, int ln [, string align [, boolean fill [, mixed link]]]]]]])
+Description
+Prints a cell (rectangular area) with optional borders, background color and character string. The upper-left corner of the cell corresponds to the current position. The text can be aligned or centered. After the call, the current position moves to the right or to the next line. It is possible to put a link on the text. 
+If automatic page breaking is enabled and the cell goes beyond the limit, a page break is done before outputting.
 
 
