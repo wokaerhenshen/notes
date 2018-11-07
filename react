@@ -37,3 +37,65 @@ JSX 是一个看起来很像 XML 的 JavaScript 语法扩展。
 JSX 执行更快，因为它在编译为 JavaScript 代码后进行了优化。
 它是类型安全的，在编译过程中就能发现错误。
 使用 JSX 编写模板更加简单快速。
+
+4.组件
+1、我们可以使用函数定义了一个组件：
+
+function HelloMessage(props) {
+    return <h1>Hello World!</h1>;
+}
+你也可以使用 ES6 class 来定义一个组件:
+
+class Welcome extends React.Component {
+  render() {
+    return <h1>Hello World!</h1>;
+  }
+}
+
+
+
+
+复合组件
+我们可以通过创建多个组件来合成一个组件，即把组件的不同功能点进行分离。
+
+以下实例我们实现了输出网站名字和网址的组件：
+
+React 实例
+function Name(props) {
+    return <h1>网站名称：{props.name}</h1>;
+}
+function Url(props) {
+    return <h1>网站地址：{props.url}</h1>;
+}
+function Nickname(props) {
+    return <h1>网站小名：{props.nickname}</h1>;
+}
+function App() {
+    return (
+    <div>
+        <Name name="菜鸟教程" />
+        <Url url="http://www.runoob.com" />
+        <Nickname nickname="Runoob" />
+    </div>
+    );
+}
+ 
+ReactDOM.render(
+     <App />,
+    document.getElementById('example')
+);
+
+5.react 状态
+React 把组件看成是一个状态机（State Machines）。通过与用户的交互，实现不同状态，然后渲染 UI，让用户界面和数据保持一致。
+
+React 里，只需更新组件的 state，然后根据新的 state 重新渲染用户界面（不要操作 DOM）。
+
+将生命周期方法添加到类中
+在具有许多组件的应用程序中，在销毁时释放组件所占用的资源非常重要。
+
+每当 Clock 组件第一次加载到 DOM 中的时候，我们都想生成定时器，这在 React 中被称为挂载。
+
+同样，每当 Clock 生成的这个 DOM 被移除的时候，我们也会想要清除定时器，这在 React 中被称为卸载
+
+componentDidMount()
+componentWillUnmount()
