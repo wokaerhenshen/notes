@@ -13,3 +13,30 @@ In this instance, we can fix it by adding overflow:hidden to the parent element,
 Now the parent element is no longer collapsed and the red background is visible.
 
 You could alternatively use a clearfix if you are looking for support in older browsers, but I don't recommend doing so.
+
+
+4.可以再html中添加自定义属性：
+使用 data-* 属性来嵌入自定义数据：
+
+语法
+<element data-*="somevalue">
+代码片段：
+<script>
+function showDetails(animal) {
+    var animalType = animal.getAttribute("data-animal-type");
+    alert(animal.innerHTML + "是一种" + animalType + "。");
+}
+</script>
+</head>
+<body>
+
+<h1>物种</h1>
+
+<p>点击某个物种来查看其类别：</p>
+
+<ul>
+  <li onclick="showDetails(this)" id="owl" data-animal-type="鸟类">喜鹊</li>
+  <li onclick="showDetails(this)" id="salmon" data-animal-type="鱼类">金枪鱼</li>  
+  <li onclick="showDetails(this)" id="tarantula" data-animal-type="蜘蛛">蝇虎</li>  
+</ul>
+
