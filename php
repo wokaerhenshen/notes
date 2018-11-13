@@ -124,4 +124,4 @@ Description
 Prints a cell (rectangular area) with optional borders, background color and character string. The upper-left corner of the cell corresponds to the current position. The text can be aligned or centered. After the call, the current position moves to the right or to the next line. It is possible to put a link on the text. 
 If automatic page breaking is enabled and the cell goes beyond the limit, a page break is done before outputting.
 
-
+16. include 并不是去到另外一个页面而是直接把code， 弄到已又code的地方，就等于说插入代码这种，跟require一个意思，去到另外page的code叫做header好吧。
