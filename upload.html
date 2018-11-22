@@ -1,0 +1,60 @@
+<input type="file" id="input">
+<a id="downloadLink" download>Download</a>
+<div id="log">
+        <h3>Content:</h3>
+</div>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+<script>
+var inputElement = document.getElementById("input");
+var reader = new FileReader();
+var downloadLink = document.getElementById('downloadLink');
+
+reader.onloadend = function(event){
+ // console.log(reader.result);
+ console.log(event.target.result);
+ var $log = $("#log"),
+ str = event.target.result,
+ html = $.parseHTML( str );
+
+
+ $log.append(html);
+ $("h1").val("hello caro!!!!");
+
+ funDownload(event.target.result,"myTest.php");
+ //downloadLink.href = window.URL.createObjectURL(event.target.result);
+}
+inputElement.addEventListener("change", handleFiles, false);
+function handleFiles() {
+  var fileSelected = this.files[0]; /* now you can work with the file list */
+  reader.readAsText(fileSelected, "UTF-8");
+ // reader.readAsBinaryString(fileSelected);
+ //console.log(fileSelected);
+  //downloadLink.href = window.URL.createObjectURL(fileSelected);
+}
+
+function funDownload(content, filename) {
+    //自己把自己生出来
+    //创建隐藏的可下载链接
+    var eleLink = document.createElement('a');
+    eleLink.download = filename;
+
+    //不让别人看到
+    eleLink.style.display = 'none';
+    // 字符内容转变成blob地址
+    //射精撸管
+    var blob = new Blob([content]);
+    eleLink.href = URL.createObjectURL(blob);
+    //触发点击
+    //精液抹在这世界身上
+    document.body.appendChild(eleLink);
+
+    //自己点了自己的鸡巴
+    eleLink.click();
+    //然后移除
+
+    //自己把自己给永久抹杀了
+    document.body.removeChild(eleLink);
+};
+
+</script>
