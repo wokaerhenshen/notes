@@ -1,5 +1,5 @@
 
-
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <style>
 label {
   cursor: pointer;
@@ -10,40 +10,75 @@ textarea {
   height: 150px;
 }
 </style>
-<?php  ?>
+<button onclick="myFunction()">Reload page</button>
+<h1>For videos:</h1>       
+<textarea name="textarea" id="testo"></textarea>
+<div id="anteprima"></div>
+<textarea id='save'></textarea>
+<h1>For testimonials:</h1>
+<textarea name="textarea" id="comment"></textarea>
+<div id="showComment"></div>
+<script>
 
-<div>
-    <label for="input-file">Specify a file:</label><br>
-    <input type="file" id="input-file">
-</div>
-       
-        <textarea id="content-target"></textarea>
-        <script>
-            document.getElementById('input-file')
-              .addEventListener('change', getFile)
+function myFunction() {
+    location.reload();
+}
+
+
+$(document).ready(function() {
+      $("#testo").change(function() {
+            //$("#anteprima").html($("#testo").val());
+            $content = $("#anteprima"),
+            str= $("#testo").val(),
+            html = $.parseHTML(str);
+            $content.append(html);
+            //console。
+            console.log( $("#anteprima > img").attr('src'));
+            var gifSrc =  $("#anteprima > img").attr('src');
+            var style = $("#anteprima > img").attr('style');
+            var name = $("#anteprima > img").attr('name');
+            var title = $("#anteprima > img").attr('title');
             
-            function getFile(event) {
-                const input = event.target
-              if ('files' in input && input.files.length > 0) {
-                  placeFileContent(
-                  document.getElementById('content-target'),
-                  input.files[0])
-              }
-            }
+            var videoStr = "<video class='animation' data-alt='images/.gif' autoplay loop muted playsinline><source src='images/.mp4' type='video/mp4'></video>";
+            var videoHTML = $.parseHTML(videoStr);
             
-            function placeFileContent(target, file) {
-                readFileContent(file).then(content => {
-                  target.value = content
-              }).catch(error => console.log(error))
-            }
+            $content.append(videoHTML);
+            $("#anteprima > video").attr('data-alt',gifSrc);
+            $("#anteprima > video").attr('style',style);
+            $("#anteprima > video").attr('name',name);
+            $("#anteprima > video").attr('title',title);
+            var withoutGifFileType = gifSrc.split('.',1);
+            withoutGifFileType = withoutGifFileType + ".mp4";
+            $("video > source").attr('src',withoutGifFileType);
+            var x = $('#anteprima > video').wrap('<p/>').parent().html();
+            $('#anteprima > video').unwrap();
+            $('#save').val(x);
             
-            function readFileContent(file) {
-                const reader = new FileReader()
-              return new Promise((resolve, reject) => {
-                reader.onload = event => resolve(event.target.result)
-                reader.onerror = error => reject(error)
-                reader.readAsText(file)
-              })
-            }
-            
-        </script>
+      });
+      
+      $("#comment").change(function(){
+         
+          var commentStr = $("#comment").val();
+          var commentHtml = $.parseHTML(commentStr);
+          $("#showComment").append(commentHtml);
+          console.log("comment changes.");
+          var customerName = $('.tname').text();
+          var products = $('.tprod').text();
+          var date = $('.tdate').text();
+          var comment = $('.tcomment').text();
+          console.log(comment);
+          
+          
+          var newSyntax = "<div class='testimonialPaper'><div class='content'><p class='testimonial'></p><p class='customer'><span>Customer: </span><span style='display: inline-block; margin-right: 1em;'></span><span style='display: inline-block; margin-right: 1em;'></span></p></div><div class='bottom'></div></div>";
+          var newSyHtml = $.parseHTML(newSyntax);
+          $("#showComment").append(newSyHtml);
+          $(".testimonial").text(comment);
+          $(".customer span:first-child").text(customerName);
+          $(".customer span:nth-child(2)").text(products);
+          $(".customer span:last-child").text(date);
+      });
+      
+      
+      
+});
+</script>
