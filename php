@@ -125,3 +125,6 @@ Prints a cell (rectangular area) with optional borders, background color and cha
 If automatic page breaking is enabled and the cell goes beyond the limit, a page break is done before outputting.
 
 16. include 并不是去到另外一个页面而是直接把code， 弄到已又code的地方，就等于说插入代码这种，跟require一个意思，去到另外page的code叫做header好吧。
+
+17.chdir('..');
+make the current dir equals to .., which is the top level of current dir
