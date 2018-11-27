@@ -51,3 +51,11 @@ it means that on the left part it will be a 20 px tianchong.
 
 5.面向对象编程，this的用法：
 https://mp.weixin.qq.com/s?__biz=MjM5MjAwODM4MA==&mid=2650708955&idx=2&sn=60632053be135f715adc1d544aa553ad&chksm=bea6ea0889d1631ef3ca85d366980b55a8e2db3b4202b3ba10b1350e08595b0ad6e5cb670ebe&mpshare=1&scene=1&srcid=1121mY2u3fWtgURWaYguuevC&pass_ticket=z%2FTI%2BMCxdT5og0aMqaDKZXzUHps%2FaYzqiuPuKFtqF39szjIwUewIfD1Zwo7LHeRI#rd
+
+6.Some useful tools of javascript:
+
+1)Broweserify: bundle all the packages for us and compile the React JSX
+2) ESLint: give notice to the user to make the code clean
+3) GULP: task runner, tasks for building, file watches and auto loads. 
+
+They can all be reached by npm install.
