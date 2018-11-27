@@ -59,3 +59,6 @@ https://mp.weixin.qq.com/s?__biz=MjM5MjAwODM4MA==&mid=2650708955&idx=2&sn=606320
 3) GULP: task runner, tasks for building, file watches and auto loads. 
 
 They can all be reached by npm install.
+
+7.JSX:
+javascript xml like syntax, very likely to html
