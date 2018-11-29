@@ -208,4 +208,7 @@ componentWillUnmount()
 	简单来说就是清理残留数据。
 8.register service worker
 如果断网了，再用浏览器加载页面依旧能够加载出来，因为该module将网页存在了浏览器里面。
+PWA progressive web application
+
+跟manifest.json相关，该json里面的内容就是与缓存相关的。
 
