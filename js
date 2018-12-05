@@ -62,3 +62,15 @@ They can all be reached by npm install.
 
 7.JSX:
 javascript xml like syntax, very likely to html
+
+8. es6 find function 
+The find() method returns the value of the first element in the array that satisfies the provided testing function. Otherwise undefined is returned.
+
+var array1 = [5, 12, 8, 130, 44];
+
+var found = array1.find(function(element) {
+  return element > 10;
+});
+
+console.log(found);
+// expected output: 12
