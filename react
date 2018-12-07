@@ -224,4 +224,6 @@ function*
  yield...
  
  这种，跟C# async await 蛮像的
+ 
+ takeEvery() 就是一个listener，用来监听action何时被call了
 
