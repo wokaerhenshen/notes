@@ -214,3 +214,14 @@ PWA progressive web application
 
 9.fragment 占位符，如果你render最外面不想是一个div的话，就用fragment把其他元素包起来。fragment不会显示到html里面，等于说最外面并没有东西把他包着。
 
+
+10. saga：
+
+是个midddleware，在reducer之前执行，用来处理复杂的async call，
+写的时候要：
+function*
+
+ yield...
+ 
+ 这种，跟C# async await 蛮像的
+
