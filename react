@@ -236,3 +236,12 @@ Avoid introducing any side-effects or subscriptions in this method. For those us
 
 This is the only lifecycle method called on server rendering.
 
+12. 与11有点相似：
+Mount
+When React creates an instance of a component and inserts it into the DOM (mounting), the following methods are called:
+
+constructor()
+componentWillMount()
+render()
+componentDidMount()
+
