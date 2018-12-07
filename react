@@ -226,4 +226,13 @@ function*
  这种，跟C# async await 蛮像的
  
  takeEvery() 就是一个listener，用来监听action何时被call了
+ 
+ 11. react life cycle:
+ UNSAFE_componentWillMount()
+UNSAFE_componentWillMount()
+UNSAFE_componentWillMount() is invoked just before mounting occurs. It is called before render(), therefore calling setState() synchronously in this method will not trigger an extra rendering. Generally, we recommend using the constructor() instead for initializing state.
+
+Avoid introducing any side-effects or subscriptions in this method. For those use cases, use componentDidMount() instead.
+
+This is the only lifecycle method called on server rendering.
 
