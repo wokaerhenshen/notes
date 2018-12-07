@@ -245,3 +245,14 @@ componentWillMount()
 render()
 componentDidMount()
 
+13. 还是lifecycle里的事情：
+componentWillReceiveProps
+Our component was doing just fine, when all of a sudden a stream of new props arrive to mess things up.
+
+Perhaps some data that was loaded in by a parent component’s componentDidMount finally arrived, and is being passed down.
+
+Before our component does anything with the new props, componentWillReceiveProps is called, with the next props as the argument.
+
+
+We are now in a fun place, where we have access to both the next props (via nextProps), and our current props (via this.props).
+
