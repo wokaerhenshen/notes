@@ -35,6 +35,8 @@ declare @model char(5) = '$ooModelNumber'
  
  It's been a while but in case someone is still having this problem: all you have to do is to call SET NOCOUNT ON at the beginning of the stored procedure. This will prevent the "rows affected" messages to be sent to the client and be mistaken for the output of the procedure.
 
+
+
 5. script to drop all tables in a db:
 /* Azure friendly */
 /* Drop all Foreign Key constraints */
@@ -93,3 +95,34 @@ BEGIN
     SELECT @name = (SELECT TOP 1 [name] FROM sysobjects WHERE [type] = 'U' AND category = 0 AND [name] > @name ORDER BY [name])
 END
 GO
+
+6. sql中的事物（transcation 详解）如果一次性要向数据库中插入多条数据，用transcation
+事务是在数据库上按照一定的逻辑顺序执行的任务序列，既可以由用户手动执行，也可以由某种数据库程序自动执行。
+
+事务实际上就是对数据库的一个或者多个更改。当你在某张表上创建更新或者删除记录的时，你就已经在使用事务了。控制事务以保证数据完整性，并对数据库错误做出处理，对数据库来说非常重要。
+
+实践中，通常会将很多 SQL 查询组合在一起，并将其作为某个事务一部分来执行。
+
+事务的属性：
+
+事务具有以下四个标准属性，通常用缩略词 ACID 来表示：
+
+原子性：保证任务中的所有操作都执行完毕；否则，事务会在出现错误时终止，并回滚之前所有操作到原始状态。
+一致性：如果事务成功执行，则数据库的状态得到了进行了正确的转变。
+隔离性：保证不同的事务相互独立、透明地执行。
+持久性：即使出现系统故障，之前成功执行的事务的结果也会持久存在。
+事务控制：
+有四个命令用于控制事务：
+
+COMMIT：提交更改；
+ROLLBACK：回滚更改；
+SAVEPOINT：在事务内部创建一系列可以 ROLLBACK 的还原点；
+SET TRANSACTION：命名事务；
+COMMIT 命令：
+COMMIT 命令用于保存事务对数据库所做的更改。
+
+COMMIT 命令会将自上次 COMMIT 命令或者 ROLLBACK 命令执行以来所有的事务都保存到数据库中。
+ROLLBACK 命令：
+ROLLBACK 命令用于撤销尚未保存到数据库中的事务。
+
+ROLLBACK 命令只能撤销自上次 COMMIT 命令或者 ROLLBACK 命令执行以来的事务。
