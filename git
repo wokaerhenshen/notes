@@ -1,0 +1,12 @@
+1.
+创建新分支：git branch branchName
+
+切换到新分支：git checkout branchName
+
+然后，上面两个命令也可以合成为一个命令：
+
+git checkout -b branchName
+
+
+git常用的几个指令 详解：
+http://www.ruanyifeng.com/blog/2014/06/git_remote.html
