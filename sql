@@ -126,3 +126,6 @@ ROLLBACK 命令：
 ROLLBACK 命令用于撤销尚未保存到数据库中的事务。
 
 ROLLBACK 命令只能撤销自上次 COMMIT 命令或者 ROLLBACK 命令执行以来的事务。
+
+7.What is “with (nolock)” in SQL Server?
+WITH (NOLOCK) is the equivalent of using READ UNCOMMITED as a transaction isolation level. So, you stand the risk of reading an uncommitted row that is subsequently rolled back, i.e. data that never made it into the database. So, while it can prevent reads being deadlocked by other operations, it comes with a risk. In a banking application with high transaction rates, it's probably not going to be the right solution to whatever problem you're trying to solve with it IMHO.
