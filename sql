@@ -129,3 +129,8 @@ ROLLBACK 命令只能撤销自上次 COMMIT 命令或者 ROLLBACK 命令执行�
 
 7.What is “with (nolock)” in SQL Server?
 WITH (NOLOCK) is the equivalent of using READ UNCOMMITED as a transaction isolation level. So, you stand the risk of reading an uncommitted row that is subsequently rolled back, i.e. data that never made it into the database. So, while it can prevent reads being deadlocked by other operations, it comes with a risk. In a banking application with high transaction rates, it's probably not going to be the right solution to whatever problem you're trying to solve with it IMHO.
+
+8. In the where condition, if you want to [disable] the condition for a specific value
+Use 
+(P.CategoryId = @Category OR @Category = 0)
+In this case if the @category = 0 then the where statement just omit the value and this condition just pass and doesn't take any effect.
