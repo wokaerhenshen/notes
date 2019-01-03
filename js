@@ -74,3 +74,8 @@ var found = array1.find(function(element) {
 
 console.log(found);
 // expected output: 12
+
+9.
+in js:
+"0" == 0
+true!
