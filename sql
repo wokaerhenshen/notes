@@ -134,3 +134,7 @@ WITH (NOLOCK) is the equivalent of using READ UNCOMMITED as a transaction isolat
 Use 
 (P.CategoryId = @Category OR @Category = 0)
 In this case if the @category = 0 then the where statement just omit the value and this condition just pass and doesn't take any effect.
+
+
+9.
+The SQL Server ISNULL() function lets you return an alternative value when an expression is NULL:
