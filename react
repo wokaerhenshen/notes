@@ -256,3 +256,33 @@ Before our component does anything with the new props, componentWillReceiveProps
 
 We are now in a fun place, where we have access to both the next props (via nextProps), and our current props (via this.props).
 
+14.
+import React, { Component } from 'react';
+import { Provider, connect } from 'react-redux';
+
+class ProtectedRoute extends Component {
+    render() {
+      const { component: Component, ...props } = this.props
+  
+      return (
+        <Route 
+          {...props} 
+          render={props => (
+            this.props.isMedical && 
+              <Component {...props} /> 
+          )} 
+        />
+      )
+    }
+  }
+
+  function mapStateToProps(state) {
+    return {
+      isMedical: state.common.applicationSettings.isMedical
+    };
+  }
+
+
+
+export default connect(mapStateToProps)(ProtectedRoute);
+
