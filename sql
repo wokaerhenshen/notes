@@ -138,3 +138,15 @@ In this case if the @category = 0 then the where statement just omit the value a
 
 9.
 The SQL Server ISNULL() function lets you return an alternative value when an expression is NULL:
+
+10.
+
+The SQL UNION Operator
+The UNION operator is used to combine the result-set of two or more SELECT statements.
+
+Each SELECT statement within UNION must have the same number of columns
+The columns must also have similar data types
+The columns in each SELECT statement must also be in the same order
+
+UNION ALL Syntax
+The UNION operator selects only distinct values by default. To allow duplicate values, use UNION ALL:
