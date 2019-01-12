@@ -182,3 +182,24 @@ Re: Why can't I use [FromBody] in HttpGet?
 Dec 27, 2017 09:34 PM|LINK
 
 A Get does not send the body of the form, it only requests a URL.  Use a <form> in your view and post it to your controller method, which needs to be decorated with HttpPost.
+
+
+
+: this()
+
+: this(...)
+
+This syntax allows you to call one constructor with a different signature from another within the same class. It is never mandatory to do this, but can sometimes be useful.
+
+An example of when it can be useful is for reusing common code in the constructors. For example in C# 3.5 or before you may want to simulate optional parameters on a constructor:
+
+Foo(int x, int y)
+{
+     this.x = x;
+     this.y = y;
+}
+
+Foo(int x) : this(x, 10) {}  // y defaults to 10
+With C# 4.0 optional parameters are now available which reduces the need for this approach.
+
+An alternative way to reuse code in constructors is to factor it out into a static function which is called from each constructor that wishes to use it.
