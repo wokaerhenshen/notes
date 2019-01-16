@@ -116,3 +116,8 @@ D:依赖倒置原则
 
 1-1、模式理解
       保证一个类仅有一个实例，并提供一个访问它的全局访问点。
+      
+
+
+分布式系统：
+https://medium.freecodecamp.org/a-thorough-introduction-to-distributed-systems-3b91562c9b3c
