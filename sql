@@ -285,4 +285,27 @@ select id from t where num = 0
 （6）不要以为使用MySQL的一些连接操作对查询有多么大的改善，其实核心是索引（别打我，下一篇讲）
 
 
+14. db migration.
+C# Code-First migration, up/down?
+
+The Up method upgrades your database from its current state (represented by your previous migration) to the state expected by your current code migration. The Down method does the reverse operation - it removes all the changes from the current migration and reverts database to the state expected by the previous migration. It's like installing / uninstalling the migration. Only one of these methods is executed when you call update-database. To use the Down method you must explicitly specify the target migration for your upgrade. If the target migration is the old one, the migration API will automatically use the Down method and downgrade your database.
+
+ dotnet ef database update
+
+Usage: dotnet ef database update [arguments] [options]
+
+Arguments:
+  <MIGRATION>  The target migration. If '0', all migrations will be reverted. De
+faults to the last migration.
+
+Options:
+  -c|--context <DBCONTEXT>               The DbContext to use.
+  -p|--project <PROJECT>                 The project to use.
+  -s|--startup-project <PROJECT>         The startup project to use.
+  --framework <FRAMEWORK>                The target framework.
+  --configuration <CONFIGURATION>        The configuration to use.
+  --runtime <RUNTIME_IDENTIFIER>         The runtime to use.
+  --msbuildprojectextensionspath <PATH>  The MSBuild project extensions path. Defaults to "obj".
+  --no-build                             Don't build the project. Only use this when
+                                         the build is up-to-date.
 
