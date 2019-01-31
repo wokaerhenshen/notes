@@ -203,3 +203,7 @@ Foo(int x) : this(x, 10) {}  // y defaults to 10
 With C# 4.0 optional parameters are now available which reduces the need for this approach.
 
 An alternative way to reuse code in constructors is to factor it out into a static function which is called from each constructor that wishes to use it.
+
+
+自行理解的datatransfer object：
+ 也就是说，从前端出来的数据很有可能是不符合数据库要求的，而在这个时候，我们只要先吧vm里的东西塞到一个dto里面，然后再用这个dto进行与底层class的交互，这样看起来更加clear一些。
