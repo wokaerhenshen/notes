@@ -286,3 +286,8 @@ class ProtectedRoute extends Component {
 
 export default connect(mapStateToProps)(ProtectedRoute);
 
+15.
+
+注：上面两段代码你可能会想，为什么 Func 和 Class 都能实现一个组件，他们有什么差别吗？
+其实你在开发时不容易感觉到差别，但 React 本身是进行了很多差别处理，如果是 Class 类，React 会用 new 关键字实例化，然后调用该实例的 render 方法，如果是 Func 函数，React 会直接调用它。
+
